@@ -11,6 +11,11 @@ package kelly;
  */
 public class DataSet {
     private Fact [] fact;
+    
+        
+    private String getFact(){
+        return fact;
+    }
     @Override
     public String toString(){
         String finalList = null;

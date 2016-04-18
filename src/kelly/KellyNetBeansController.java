@@ -24,11 +24,6 @@ public class KellyNetBeansController implements Initializable {
     @FXML
     private BarChart barChart;
     
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
     
     @Override
     public void initialize(URL ur, ResourceBundle rb) {
@@ -59,6 +54,10 @@ public class KellyNetBeansController implements Initializable {
         Gson gson = new Gson();
         DataSet DS = gson.fromJson(str, DataSet.class);
         System.out.println(DS);
-    }    
+    }  
+    XYChart.Series<String, Number> dataInfo = new XYChart.Series();
+    DS.getFact("# of failed immunizations");
+    
+    
     
 }
