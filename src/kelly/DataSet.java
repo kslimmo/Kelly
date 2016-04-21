@@ -12,15 +12,18 @@ package kelly;
 public class DataSet {
     private Fact [] fact;
     
-        
-    private String getFact(){
+    /**
+     *
+     * @return
+     */
+    public Fact[] getFact(){
         return fact;
     }
     @Override
     public String toString(){
         String finalList = null;
         System.out.println("Polio Immunizations in 1980");
-        for(int i=0; i <= fact.length; i++){
+        for(int i=0; i < fact.length; i++){
             System.out.println(fact[i].toString());
             finalList += fact[i].toString();
         }

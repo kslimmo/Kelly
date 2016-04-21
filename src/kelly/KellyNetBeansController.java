@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 
 /**
@@ -52,12 +53,16 @@ public class KellyNetBeansController implements Initializable {
         scan.close();
 
         Gson gson = new Gson();
-        DataSet DS = gson.fromJson(str, DataSet.class);
-        System.out.println(DS);
+        DataSet ds = gson.fromJson(str, DataSet.class);
+        System.out.println(ds);
+        
+        XYChart.Series<String, Number> dataInfo = new XYChart.Series();
+        Fact [] blah = ds.getFact();
+        for (Fact blah1 : blah) {
+            blah.getData().add(new XYChart.Data(blah1.toString(), blah.get(blah1)));
+        }
     }  
-    XYChart.Series<String, Number> dataInfo = new XYChart.Series();
-    DS.getFact("# of failed immunizations");
-    
-    
     
 }
+    
+   
