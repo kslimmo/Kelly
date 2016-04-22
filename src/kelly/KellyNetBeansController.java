@@ -59,8 +59,14 @@ public class KellyNetBeansController implements Initializable {
         XYChart.Series<String, Number> dataInfo = new XYChart.Series();
         Fact [] blah = ds.getFact();
         for (Fact blah1 : blah) {
-            blah.getData().add(new XYChart.Data(blah1.toString(), blah.get(blah1)));
+            if(blah1.getDim().getCountry() == null){
+                
+            }else{
+            dataInfo.getData().add(new XYChart.Data(blah1.getDim().getCountry(), blah1.getValue()));
+            }
         }
+        barChart.getData().add(dataInfo);
+
     }  
     
 }

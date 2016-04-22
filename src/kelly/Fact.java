@@ -11,7 +11,15 @@ package kelly;
  */
 public class Fact {
     private Dim dim;
-    private String Value;
+    private int Value;
+    
+    public Dim getDim(){
+        return dim;
+    }
+    
+    public int getValue(){
+        return Value;
+    }
     
     @Override 
     public String toString(){
