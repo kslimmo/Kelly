@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 
 /**
  *
@@ -24,6 +25,12 @@ public class KellyNetBeansController implements Initializable {
     
     @FXML
     private BarChart barChart;
+    @FXML
+    private Slider minSlider;
+    
+    @FXML
+    private Slider maxSlider;
+    
     
     
     @Override
